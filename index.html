@@ -1,194 +1,923 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Technical Architect Resume - Abhay SHUKLA</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      max-width: 900px;
-      margin: 2rem auto;
-      background: #f4f7f8;
-      color: #333;
-      line-height: 1.5;
-      padding: 1rem 2rem;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    h1 {
-      margin-bottom: 0;
-      font-size: 2.5rem;
-      color: #2c3e50;
-    }
-    p.contact-info {
-      margin-top: 0.25rem;
-      font-size: 1rem;
-      color: #555;
-    }
-    a {
-      color: #2980b9;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    section {
-      background: white;
-      padding: 1.5rem 2rem;
-      margin-bottom: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgb(0 0 0 / 0.1);
-    }
-    h2 {
-      border-bottom: 2px solid #2980b9;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-      color: #2980b9;
-    }
-    h3 {
-      margin-top: 0;
-      color: #34495e;
-    }
-    em {
-      color: #7f8c8d;
-      font-style: normal;
-      font-size: 0.9rem;
-    }
-    ul {
-      padding-left: 1.2rem;
-      margin-top: 0.3rem;
-    }
-    ul li {
-      margin-bottom: 0.4rem;
-    }
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      list-style: none;
-      padding-left: 0;
-    }
-    .skills-list li {
-      background: #2980b9;
-      color: white;
-      padding: 6px 12px;
-      border-radius: 15px;
-      font-size: 0.9rem;
-    }
-    .project-title {
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amir Jaballah | Architecte de la Performance : Humain × Technologie × Business</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --accent-blue: #2563eb;
+            --accent-dark: #1e293b;
+            --accent-light: #eff6ff;
+            --success: #10b981;
+            --border-radius: 16px;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 40px 20px;
+            transition: background-color 0.3s;
+        }
+
+        /* --- LANGUAGE SWITCHER --- */
+        .lang-switch-container {
+            max-width: 1200px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .lang-btn {
+            background: white;
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-secondary);
+            transition: all 0.2s;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lang-btn:hover {
+            border-color: var(--accent-blue);
+            color: var(--accent-blue);
+        }
+
+        .lang-btn.active {
+            background: var(--accent-blue);
+            color: white;
+            border-color: var(--accent-blue);
+        }
+
+        /* --- VISIBILITY TOGGLE CLASSES --- */
+        .hidden { display: none !important; }
+
+        /* --- LAYOUT BENTO (Main Grid) --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto 80px auto; 
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+            grid-auto-flow: dense;
+        }
+
+        /* --- Common Card Styles --- */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            padding: 32px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        h2 { font-size: 18px; font-weight: 700; color: var(--text-primary); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+        h3 { font-size: 16px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+        h4 { font-size: 13px; font-weight: 700; color: var(--accent-blue); text-transform: uppercase; margin-bottom: 10px; margin-top: 15px; letter-spacing: 0.5px; }
+        
+        p { font-size: 14px; color: var(--text-secondary); margin-bottom: 12px; }
+        ul { list-style: none; padding: 0; }
+        li { font-size: 14px; color: var(--text-secondary); margin-bottom: 8px; padding-left: 20px; position: relative; }
+        .container li::before { content: "•"; color: var(--accent-blue); font-weight: bold; position: absolute; left: 0; }
+
+        /* --- Specific Cards Styling --- */
+
+        .card-profile {
+            grid-column: span 8;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 32px;
+        }
+        .profile-avatar {
+            width: 120px; height: 120px;
+            background: var(--accent-dark);
+            color: white;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 48px; font-weight: 700;
+            flex-shrink: 0;
+        }
+        .profile-content h1 { font-size: 32px; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 8px; }
+        .profile-content .subtitle { color: var(--accent-blue); font-weight: 600; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; margin-bottom: 16px; }
+        .profile-content .bio { font-size: 15px; color: var(--text-secondary); max-width: 600px; }
+
+        .card-stats {
+            grid-column: span 4;
+            grid-row: span 2;
+            background: var(--accent-dark);
+            color: white;
+            justify-content: center;
+            gap: 40px;
+            text-align: center;
+        }
+        .stat-item { display: flex; flex-direction: column; align-items: center; }
+        .stat-value { font-size: 42px; font-weight: 800; color: var(--success); line-height: 1; margin-bottom: 8px; }
+        .stat-label { font-size: 13px; opacity: 0.8; text-transform: uppercase; letter-spacing: 0.5px; }
+        .stat-divider { width: 40px; height: 2px; background: rgba(255,255,255,0.1); margin: 0 auto; }
+
+        .card-vision {
+            grid-column: span 8;
+            background: linear-gradient(135deg, #fff 0%, #f0f9ff 100%);
+            border-color: #bfdbfe;
+        }
+        .quote-block {
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 24px;
+            font-style: italic;
+            font-size: 16px;
+            color: var(--text-primary);
+        }
+
+        .card-experience {
+            grid-column: span 8;
+            grid-row: span 2;
+        }
+        .timeline-item {
+            padding-left: 24px;
+            border-left: 2px solid var(--border-color);
+            position: relative;
+            padding-bottom: 32px;
+        }
+        .timeline-item:last-child { padding-bottom: 0; border-left-color: transparent; }
+        .timeline-item::after {
+            content: ''; position: absolute; left: -6px; top: 6px;
+            width: 10px; height: 10px; background: var(--accent-blue); border-radius: 50%;
+            box-shadow: 0 0 0 4px white;
+        }
+        .job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+        .job-title { font-weight: 700; font-size: 15px; color: var(--text-primary); }
+        .job-meta { font-size: 12px; color: var(--text-muted); font-weight: 500; }
+        .job-company { color: var(--accent-blue); font-weight: 600; font-size: 13px; margin-bottom: 8px; display: block; }
+
+        .card-international {
+            grid-column: span 4;
+        }
+        .map-list li { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f1f5f9; padding: 10px 0; margin: 0; }
+        .map-list li::before { content: none; }
+        .country { font-weight: 600; color: var(--text-primary); display: flex; align-items: center; gap: 8px; }
+        .duration { font-size: 12px; color: var(--text-muted); background: #f1f5f9; padding: 4px 10px; border-radius: 12px; font-weight: 500; }
+
+        .card-skills {
+            grid-column: span 4;
+        }
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
+        .tag {
+            background: var(--accent-light);
+            color: var(--accent-blue);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            border: 1px solid #dbeafe;
+        }
+        .tag.soft {
+            background: #f0fdf4;
+            color: #15803d;
+            border-color: #bbf7d0;
+        }
+
+        .card-video {
+            grid-column: span 6;
+            padding: 0;
+            overflow: hidden;
+            background: black;
+            min-height: 300px;
+            position: relative;
+        }
+        .video-link {
+            display: block; width: 100%; height: 100%; position: relative; text-decoration: none;
+        }
+        .video-thumb {
+            width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.8; transition: opacity 0.3s;
+        }
+        .play-button {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 70px; height: 70px; background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 30px; color: var(--accent-blue);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.2s, background-color 0.2s;
+        }
+        .video-link:hover .video-thumb { opacity: 0.6; }
+        .video-link:hover .play-button { transform: translate(-50%, -50%) scale(1.1); background-color: white; }
+
+        .card-education {
+            grid-column: span 6;
+            background: #fffbeb;
+            border-color: #fcd34d;
+        }
+        .edu-badge {
+            background: #f59e0b; color: white;
+            font-size: 11px; font-weight: 700; text-transform: uppercase;
+            padding: 4px 8px; border-radius: 4px; display: inline-block; margin-bottom: 10px;
+        }
+
+        /* --- CONTACT SECTION (MODIFIED DARK CONTRAST) --- */
+        .card-contact {
+            grid-column: span 12;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--accent-dark); /* Dark Background */
+            color: white; /* Light Text */
+            border-color: var(--accent-dark);
+        }
+        
+        .card-contact h3 {
+            color: white; /* Force white title */
+            margin-bottom: 5px;
+        }
+        
+        .card-contact p {
+            color: #cbd5e1; /* Light grey for secondary text */
+        }
+
+        .contact-links { display: flex; gap: 20px; }
+        
+        .btn {
+            padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 14px;
+            text-decoration: none; transition: all 0.2s;
+        }
+        
+        .btn-primary { 
+            background: var(--accent-blue); 
+            color: white; 
+            border: 1px solid var(--accent-blue);
+        }
+        .btn-primary:hover { 
+            background: #3b82f6; 
+            border-color: #3b82f6;
+        }
+        
+        /* Adjusted outline button for dark background */
+        .card-contact .btn-outline { 
+            border: 1px solid rgba(255,255,255,0.3); 
+            color: white; 
+        }
+        .card-contact .btn-outline:hover { 
+            background: rgba(255,255,255,0.1); 
+            border-color: white; 
+        }
+
+        /* --- LEADERSHIP GUIDE SECTION --- */
+        .guide-container {
+            max-width: 1000px;
+            margin: 0 auto 40px auto;
+            padding: 0 20px;
+        }
+        
+        .guide-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border-color);
+        }
+        .guide-header h2 {
+            font-size: 36px; font-weight: 800; color: var(--accent-dark);
+            margin-bottom: 10px; justify-content: center;
+        }
+        .guide-header p {
+            font-size: 18px; color: var(--text-secondary); font-weight: 500;
+        }
+
+        .guide-grid {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 40px;
+        }
+
+        .guide-item {
+            background: transparent;
+            padding-bottom: 30px; border-bottom: 1px solid var(--border-color);
+            margin-bottom: 10px;
+        }
+
+        .guide-number {
+            font-size: 14px; font-weight: 700; color: var(--accent-blue);
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px; display: block;
+        }
+
+        .guide-title {
+            font-size: 22px; font-weight: 700; color: var(--text-primary); margin-bottom: 15px;
+        }
+
+        .guide-text {
+            font-size: 15px; color: var(--text-secondary); line-height: 1.7;
+        }
+
+        .guide-text strong {
+            color: var(--text-primary); font-weight: 600;
+        }
+
+        .guide-quote {
+            font-style: italic; color: var(--accent-dark);
+            border-left: 3px solid var(--accent-blue); padding-left: 15px;
+            margin: 15px 0; font-weight: 500;
+        }
+
+        .guide-full { grid-column: span 2; }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 900px) {
+            .container { grid-template-columns: 1fr; }
+            .card { grid-column: span 1 !important; }
+            .card-profile { flex-direction: column; text-align: center; }
+            .card-stats { flex-direction: row; grid-row: auto; }
+            .stat-item { margin-bottom: 0; }
+            .card-video { min-height: 250px; }
+            
+            /* Responsive Contact Card adjustments */
+            .card-contact { flex-direction: column; text-align: center; gap: 24px; }
+            
+            .guide-grid { grid-template-columns: 1fr; }
+            .guide-full { grid-column: span 1; }
+        }
+
+    </style>
 </head>
 <body>
 
-<header>
-  <h1>Your Name</h1>
-  <p class="contact-info">
-    abhay.shukla@gmail.com | (xxx) xxx-xxxx | Montreal, Canada<br />
-    <a href="https://github.com/abhayshukla04" target="_blank">GitHub</a> | 
-    <a href="https://www.linkedin.com/in/abhay-shukla-65b34528/" target="_blank">LinkedIn</a> | 
-    <a href="https://yourportfolio.com" target="_blank">Portfolio</a>
-  </p>
-</header>
+    <div class="lang-switch-container">
+        <button class="lang-btn active" id="btn-fr" onclick="setLanguage('fr')">FR</button>
+        <button class="lang-btn" id="btn-en" style="margin-left: 10px;" onclick="setLanguage('en')">EN</button>
+    </div>
 
-<section>
-  <h2>Professional Summary</h2>
-  <p>
-    Highly experienced Technical Architect with 15+ years of expertise in designing, developing, and implementing scalable enterprise solutions. Skilled in cloud architecture, microservices, DevOps automation, and cross-functional team leadership. Proven track record in driving technical innovation and aligning IT strategy with business goals.
-  </p>
-</section>
+<div class="container">
 
-<section>
-  <h2>Technical Skills</h2>
-  <ul class="skills-list">
-    <li>Cloud (AWS, Azure, GCP)</li>
-    <li>Microservices & APIs</li>
-    <li>Containerization (Docker, Kubernetes)</li>
-    <li>DevOps (Jenkins, Terraform, Ansible)</li>
-    <li>Java, Python, Node.js</li>
-    <li>Databases (SQL, NoSQL, MongoDB)</li>
-    <li>Enterprise Integration Patterns</li>
-    <li>CI/CD Pipelines</li>
-    <li>Agile & Scrum</li>
-  </ul>
-</section>
+    <div class="card card-profile">
+        <div class="profile-avatar">AJ</div>
+        <div class="profile-content">
+            <h1>Amir Jaballah</h1>
+            
+            <div class="lang-fr">
+                <div class="subtitle">Architecte de la Performance | Leader International</div>
+                <p class="bio">
+                    Leader stratégique doté de 20 ans d'expérience à la croisée de la technologie et du business. 
+                    Expert dans le redressement d'actifs technologiques, l'optimisation opérationnelle et la transformation culturelle. 
+                    Mon moteur : aligner le capital humain sur l'agilité numérique pour maximiser la création de valeur.
+                </p>
+            </div>
+            <div class="lang-en hidden">
+                <div class="subtitle">Performance Architect | International Leader</div>
+                <p class="bio">
+                    Strategic leader with 20 years of experience at the crossroads of technology and business.
+                    Expert in technological asset turnaround, operational optimization, and cultural transformation.
+                    My engine: aligning human capital with digital agility to maximize value creation.
+                </p>
+            </div>
 
-<section>
-  <h2>Professional Experience</h2>
+        </div>
+    </div>
 
-  <article>
-    <h3>Senior Technical Architect - XYZ Solutions</h3>
-    <em>Jan 2018 – Present</em>
-    <ul>
-      <li>Designed and implemented cloud-native microservices architecture for a global e-commerce platform serving 10M+ users.</li>
-      <li>Led cross-functional teams of 15+ engineers through full project lifecycle using Agile methodologies.</li>
-      <li>Developed CI/CD pipelines with Jenkins and Terraform, reducing deployment time by 40%.</li>
-      <li>Collaborated with stakeholders to translate business requirements into scalable technical solutions.</li>
-      <li>Mentored junior architects and engineers, promoting best practices and technical standards.</li>
-    </ul>
-  </article>
+    <div class="card card-stats">
+        <div class="stat-item">
+            <div class="stat-value">+20%</div>
+            <div class="stat-label">
+                <span class="lang-fr">Projection Revenus 2025</span>
+                <span class="lang-en hidden">2025 Revenue Projection</span>
+            </div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <div class="stat-value">+29%</div>
+            <div class="stat-label">
+                <span class="lang-fr">Croissance Revenus 2024</span>
+                <span class="lang-en hidden">2024 Revenue Growth</span>
+            </div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+            <div class="stat-value">+20 pts</div>
+            <div class="stat-label">
+                <span class="lang-fr">Engagement Employés</span>
+                <span class="lang-en hidden">Employee Engagement</span>
+            </div>
+        </div>
+    </div>
 
-  <article>
-    <h3>Technical Architect - ABC Technologies</h3>
-    <em>Jun 2013 – Dec 2017</em>
-    <ul>
-      <li>Architected multi-cloud hybrid solutions integrating on-premise and AWS environments.</li>
-      <li>Implemented event-driven systems using Kafka to improve system responsiveness.</li>
-      <li>Guided application modernization efforts migrating legacy monolithic apps to microservices.</li>
-      <li>Managed performance tuning and scalability improvements, increasing throughput by 50%.</li>
-    </ul>
-  </article>
+    <div class="card card-vision">
+        <h2>
+            <span class="lang-fr">🚀 Thèse de Création de Valeur</span>
+            <span class="lang-en hidden">🚀 Value Creation Thesis</span>
+        </h2>
+        
+        <div class="lang-fr">
+            <div class="quote-block">
+                "La sous-performance d'un actif technologique est rarement technique ; elle est humaine et structurelle. 
+                Ma mission est de sécuriser les investissements en alignant le capital humain sur l'agilité numérique. 
+                <strong>La culture est le multiplicateur de l'EBITDA.</strong>"
+            </div>
+        </div>
+        <div class="lang-en hidden">
+            <div class="quote-block">
+                "Technological underperformance is rarely technical; it is human and structural.
+                My mission is to secure investments by aligning human capital with digital agility.
+                <strong>Culture is the EBITDA multiplier.</strong>"
+            </div>
+        </div>
+    </div>
 
-  <article>
-    <h3>Software Engineer / Team Lead - DEF Corp</h3>
-    <em>Aug 2009 – May 2013</em>
-    <ul>
-      <li>Led development of scalable Java-based web applications with REST APIs.</li>
-      <li>Improved code quality and reduced bugs by introducing automated testing frameworks.</li>
-      <li>Coordinated sprint planning, code reviews, and delivery schedules.</li>
-    </ul>
-  </article>
-</section>
+    <div class="card card-experience">
+        <h2>
+            <span class="lang-fr">Expérience Professionnelle</span>
+            <span class="lang-en hidden">Professional Experience</span>
+        </h2>
+        <div class="timeline">
+            
+            <div class="timeline-item">
+                <div class="job-header">
+                    <span class="job-title">Chief Executive Officer & VP Operations</span>
+                    <span class="job-meta">2021 - Present</span>
+                </div>
+                <span class="job-company">SE Cloud Experts (Montréal)</span>
+                
+                <ul class="lang-fr">
+                    <li><strong>Scale-up :</strong> Pilotage de la croissance des revenus (+29% en 2024) via une restructuration commerciale.</li>
+                    <li><strong>Transformation Culturelle :</strong> Augmentation de l'engagement de 65% à 85% par un leadership serviteur.</li>
+                    <li><strong>Exécution Stratégique :</strong> Mise en place d'un cadre OKR et création du PMO pour aligner la vision et l'exécution.</li>
+                </ul>
+                <ul class="lang-en hidden">
+                    <li><strong>Scale-up:</strong> Drove revenue growth (+29% in 2024) through commercial restructuring.</li>
+                    <li><strong>Cultural Transformation:</strong> Boosted engagement from 65% to 85% through servant leadership.</li>
+                    <li><strong>Strategic Execution:</strong> Implemented OKR framework and established PMO to align vision with execution.</li>
+                </ul>
+            </div>
 
-<section>
-  <h2>Education</h2>
-  <h3>M.Sc. in Computer Science</h3>
-  <p><em>University Name, Graduation Year</em></p>
+            <div class="timeline-item">
+                <div class="job-header">
+                    <span class="job-title">Head of Digital Transformation & Digital Lab</span>
+                    <span class="job-meta">2016 - 2021</span>
+                </div>
+                <span class="job-company">Société Générale (Bangalore, India)</span>
+                
+                <ul class="lang-fr">
+                    <li><strong>Leadership :</strong> Direction d'une équipe de 40 experts (DevOps, Data, Cloud) pour bâtir les fondations digitales.</li>
+                    <li><strong>Efficacité :</strong> Optimisation du setup local générant 1.7M€ d'économies.</li>
+                    <li><strong>Satisfaction Client :</strong> Augmentation du score de satisfaction de 80% à 92% via l'amélioration des services.</li>
+                </ul>
+                <ul class="lang-en hidden">
+                    <li><strong>Leadership:</strong> Directed a team of 40 experts (DevOps, Data, Cloud) to build digital foundations.</li>
+                    <li><strong>Efficiency:</strong> Optimized local setup generating €1.7M in savings.</li>
+                    <li><strong>Client Satisfaction:</strong> Increased satisfaction score from 80% to 92% through service enhancement.</li>
+                </ul>
+            </div>
 
-  <h3>B.Sc. in Information Technology</h3>
-  <p><em>University Name, Graduation Year</em></p>
-</section>
+            <div class="timeline-item">
+                <div class="job-header">
+                    <span class="job-title">Global Head of Competency Center</span>
+                    <span class="job-meta">2012 - 2016</span>
+                </div>
+                <span class="job-company">Société Générale CIB (Paris, France)</span>
+                
+                <ul class="lang-fr">
+                    <li><strong>Management :</strong> Gestion d'une équipe de 30 experts techniques. Mentoring et développement de talents.</li>
+                    <li><strong>Négociation :</strong> Gestion des contrats éditeurs et licences logicielles pour le groupe.</li>
+                </ul>
+                <ul class="lang-en hidden">
+                    <li><strong>Management:</strong> Managed a team of 30 technical experts. Talent mentoring and development.</li>
+                    <li><strong>Negotiation:</strong> Managed vendor contracts and software licenses for the group.</li>
+                </ul>
+            </div>
 
-<section>
-  <h2>Certifications</h2>
-  <ul>
-    <li>AWS Certified Solutions Architect – Professional</li>
-    <li>Certified Kubernetes Administrator (CKA)</li>
-    <li>TOGAF 9 Certified Enterprise Architect</li>
-  </ul>
-</section>
+            <div class="timeline-item">
+                <div class="job-header">
+                    <span class="job-title">Head of Transversal Monitoring Services</span>
+                    <span class="job-meta">2011 - 2012</span>
+                </div>
+                <span class="job-company">Société Générale CIB (Paris, France)</span>
+                
+                <ul class="lang-fr">
+                    <li><strong>Stratégie :</strong> Déploiement de la stratégie de monitoring et supervision.</li>
+                    <li><strong>Performance :</strong> Amélioration de la couverture applicative de 20% à 80%.</li>
+                </ul>
+                <ul class="lang-en hidden">
+                    <li><strong>Strategy:</strong> Deployed monitoring and supervision strategy.</li>
+                    <li><strong>Performance:</strong> Improved application coverage from 20% to 80%.</li>
+                </ul>
+            </div>
 
-<section>
-  <h2>Notable Projects</h2>
-  <article>
-    <p class="project-title">Global E-Commerce Platform Modernization</p>
-    <ul>
-      <li>Led architecture redesign moving monolithic platform to cloud-based microservices with Kubernetes orchestration.</li>
-      <li>Achieved 99.99% uptime and improved page load speed by 30%.</li>
-    </ul>
-  </article>
-  <article>
-    <p class="project-title">Enterprise Data Integration Framework</p>
-    <ul>
-      <li>Designed a scalable ETL and API framework to integrate data across multiple internal systems, reducing data sync issues by 80%.</li>
-    </ul>
-  </article>
-</section>
+            <div class="timeline-item">
+                <div class="job-header">
+                    <span class="job-title">Product Manager</span>
+                    <span class="job-meta">2005 - 2010</span>
+                </div>
+                <span class="job-company">Atos (Paris, France)</span>
+                
+                <ul class="lang-fr">
+                    <li><strong>Stratégie Produit :</strong> Création du "Customer Advisory Board" pour aligner le produit au marché.</li>
+                    <li><strong>Résultats :</strong> Augmentation de l'adoption du produit de 900%.</li>
+                </ul>
+                <ul class="lang-en hidden">
+                    <li><strong>Product Strategy:</strong> Created "Customer Advisory Board" to align product with market needs.</li>
+                    <li><strong>Results:</strong> Increased product adoption by 900%.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="card card-international">
+        <h2>
+            <span class="lang-fr">🌍 Expérience Multiculturelle</span>
+            <span class="lang-en hidden">🌍 Multicultural Experience</span>
+        </h2>
+        <p class="lang-fr">Expertise éprouvée dans la gestion d'équipes multiculturelles et de projets transfrontaliers.</p>
+        <p class="lang-en hidden">Proven expertise in managing multicultural teams and cross-border projects.</p>
+        
+        <ul class="map-list">
+            <li>
+                <span class="country">🇨🇦 Montréal</span>
+                <span class="duration">~5 Years</span>
+            </li>
+            <li>
+                <span class="country">🇫🇷 Paris</span>
+                <span class="duration">~11 Years</span>
+            </li>
+            <li>
+                <span class="country">🇮🇳 Bangalore</span>
+                <span class="duration">5 Years</span>
+            </li>
+        </ul>
+    </div>
+
+    <div class="card card-skills">
+        <h2>
+            <span class="lang-fr">Compétences Clés</span>
+            <span class="lang-en hidden">Key Competencies</span>
+        </h2>
+        
+        <h4>
+            <span class="lang-fr">Leadership & Savoir-Être</span>
+            <span class="lang-en hidden">Leadership & Soft Skills</span>
+        </h4>
+        <div class="skill-tags lang-fr">
+            <span class="tag soft">Leadership Authentique</span>
+            <span class="tag soft">Intelligence Émotionnelle</span>
+            <span class="tag soft">Communication Interpersonnelle</span>
+            <span class="tag soft">Leadership Serviteur</span>
+            <span class="tag soft">Intégrité & Respect</span>
+            <span class="tag soft">Agent de Changement</span>
+        </div>
+        <div class="skill-tags lang-en hidden">
+            <span class="tag soft">Authentic Leadership</span>
+            <span class="tag soft">Emotional Intelligence</span>
+            <span class="tag soft">Interpersonal Communication</span>
+            <span class="tag soft">Servant Leadership</span>
+            <span class="tag soft">Integrity & Respect</span>
+            <span class="tag soft">Change Agent</span>
+        </div>
+
+        <h4>
+            <span class="lang-fr">Expertise Technique & Stratégique</span>
+            <span class="lang-en hidden">Technical & Strategic Expertise</span>
+        </h4>
+        <div class="skill-tags">
+            <span class="tag">Stratégie & OKR</span>
+            <span class="tag">Audit / Due Diligence</span>
+            <span class="tag">Cloud & DevOps</span>
+            <span class="tag">Finance (CIB)</span>
+            <span class="tag">Google Cloud Certified</span>
+        </div>
+    </div>
+
+    <div class="card card-video">
+        <a href="https://www.youtube.com/watch?v=yOQfEnWdbns" target="_blank" class="video-link" title="Watch Speech">
+            <img src="https://img.youtube.com/vi/yOQfEnWdbns/maxresdefault.jpg" alt="Discours Amir Jaballah Valedictorian" class="video-thumb">
+            <div class="play-button">▶</div>
+        </a>
+    </div>
+
+    <div class="card card-education">
+        <span class="edu-badge">Distinction</span>
+        <h2 class="lang-fr">Valedictorian Executive MBA 2025</h2>
+        <h2 class="lang-en hidden">Valedictorian Executive MBA 2025</h2>
+        <h3>McGill - HEC Montréal</h3>
+        
+        <div class="lang-fr">
+            <p>
+                Élu pour représenter la cohorte. Thèse sur le capital social et le réseautage des cadres expatriés.
+            </p>
+            <p style="font-style: italic; color: #b45309; margin-top: 10px;">
+                "Ce qui fera la différence, ce ne sera pas la complexité de nos analyses, mais le courage de nos actions et l'empathie."
+            </p>
+        </div>
+        <div class="lang-en hidden">
+            <p>
+                Elected to represent the cohort. Thesis on social capital and networking for expatriate executives.
+            </p>
+            <p style="font-style: italic; color: #b45309; margin-top: 10px;">
+                "What will make the difference is not the complexity of our analyses, but the courage of our actions and empathy."
+            </p>
+        </div>
+    </div>
+
+    <div class="card card-contact">
+        <div class="lang-fr">
+            <h3>Une idée, un défi ?</h3>
+            <p style="margin:0;">Discutons d'accélération de croissance.</p>
+        </div>
+        <div class="lang-en hidden">
+            <h3>An idea, a challenge?</h3>
+            <p style="margin:0;">Let's discuss growth acceleration.</p>
+        </div>
+        
+        <div class="contact-links">
+            <a href="mailto:amir.jaballah@gmail.com" class="btn btn-outline">Email</a>
+            <a href="https://www.linkedin.com/in/amir-jaballah-mba-6970721/" target="_blank" class="btn btn-primary">LinkedIn</a>
+        </div>
+    </div>
+
+</div>
+
+<div class="guide-container">
+    <div class="guide-header">
+        <h2>Leadership Guide</h2>
+        <p class="lang-fr">Mode d'emploi & Philosophie Exécutive</p>
+        <p class="lang-en hidden">Operating Manual & Executive Philosophy</p>
+    </div>
+
+    <div class="guide-grid">
+        
+        <div class="guide-item guide-full">
+            <span class="guide-number">01. 
+                <span class="lang-fr">Qui suis-je ?</span>
+                <span class="lang-en hidden">Who Am I?</span>
+            </span>
+            <h3 class="guide-title">
+                <span class="lang-fr">Un architecte qui aligne l'humain et la technologie.</span>
+                <span class="lang-en hidden">An architect aligning humans and technology.</span>
+            </h3>
+            
+            <div class="guide-text lang-fr">
+                <p>Je suis un constructeur, façonné par la rigueur de l'ingénierie et la complexité des dynamiques humaines. Initialement formé en informatique, j'ai rapidement compris que la technologie sans adoption humaine est un échec. J'ai passé 20 ans à naviguer entre les systèmes complexes (Banques, Cloud) et la gestion des talents.</p>
+                <p>J'ai vu des projets brillants échouer par manque de communication et des équipes moyennes réussir par une exécution sans faille. Mon histoire personnelle et professionnelle m'a appris que <strong>l'ambition sans garde-fous et l'ego sans humilité détruisent la valeur</strong>.</p>
+                <p>Je ne suis pas là pour maintenir le statu quo. Je suis là pour transformer, avec courage et intention.</p>
+            </div>
+            
+            <div class="guide-text lang-en hidden">
+                <p>I am a builder, shaped by the rigor of engineering and the complexity of human dynamics. Originally trained in computer science, I quickly realized that technology without human adoption is a failure. I have spent 20 years navigating complex systems (Banking, Cloud) and talent management.</p>
+                <p>I have seen brilliant projects fail due to poor communication and average teams succeed through flawless execution. My personal and professional history has taught me that <strong>ambition without guardrails and ego without humility destroy value</strong>.</p>
+                <p>I am not here to maintain the status quo. I am here to transform, with courage and intention.</p>
+            </div>
+        </div>
+
+        <div class="guide-item">
+            <span class="guide-number">02. 
+                <span class="lang-fr">Comment je dirige</span>
+                <span class="lang-en hidden">How I Lead</span>
+            </span>
+            <h3 class="guide-title">
+                <span class="lang-fr">Clarté, Momentum et Servant Leadership.</span>
+                <span class="lang-en hidden">Clarity, Momentum, and Servant Leadership.</span>
+            </h3>
+            
+            <div class="guide-text lang-fr">
+                <p>Je pratique un <strong>Leadership Serviteur</strong>. Je ne suis pas là pour être le héros, mais pour créer l'environnement où mon équipe peut l'être.</p>
+                <p>Je ne micromanage pas. Je définis la vision, je fixe le cadre (OKRs), et je fais confiance. En revanche, je challenge tout ce qui manque de substance ou d'alignement. J'équilibre la bienveillance avec une exigence élevée de performance.</p>
+            </div>
+            
+            <div class="guide-text lang-en hidden">
+                <p>I practice <strong>Servant Leadership</strong>. I am not here to be the hero, but to create the environment where my team can be.</p>
+                <p>I don't micromanage. I define the vision, set the framework (OKRs), and trust. However, I challenge anything that lacks substance or alignment. I balance benevolence with high performance standards.</p>
+            </div>
+        </div>
+
+        <div class="guide-item">
+            <span class="guide-number">03. 
+                <span class="lang-fr">Mon Pourquoi</span>
+                <span class="lang-en hidden">My Why</span>
+            </span>
+            <h3 class="guide-title">
+                <span class="lang-fr">"Le savoir ne sert à rien s'il n'est pas mis en action."</span>
+                <span class="lang-en hidden">"Knowledge is useless if not put into action."</span>
+            </h3>
+            
+            <div class="guide-text lang-fr">
+                <div class="guide-quote">
+                    "La vraie question n'est pas ce que nous avons fait, mais ce que nous allons en faire."
+                </div>
+                <p>Je refuse de laisser le potentiel dormir dans un tiroir. J'ai vu trop d'organisations où la politique remplace la performance. Je construis pour ceux qui veulent avoir un impact réel, ceux qui savent que <strong>ce que nous faisons dans cette vie résonne dans l'éternité</strong>.</p>
+            </div>
+            
+            <div class="guide-text lang-en hidden">
+                <div class="guide-quote">
+                    "The real question is not what we have done, but what we are going to do with it."
+                </div>
+                <p>I refuse to let potential sit in a drawer. I’ve seen too many organizations where politics replace performance. I build for those who want real impact, those who know that <strong>what we do in this life echoes in eternity</strong>.</p>
+            </div>
+        </div>
+
+        <div class="guide-item">
+            <span class="guide-number">04. 
+                <span class="lang-fr">Ce que je valorise</span>
+                <span class="lang-en hidden">What I Value</span>
+            </span>
+            <h3 class="guide-title">
+                <span class="lang-fr">Courage > Confort</span>
+                <span class="lang-en hidden">Courage > Comfort</span>
+            </h3>
+            
+            <div class="guide-text lang-fr">
+                <ul style="list-style: none; padding:0;">
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>Exécution > Théorie :</strong> Au-delà de la stratégie, c'est l'exécution qui prime.</li>
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>Transparence :</strong> Je partage la vision et les résultats, bons ou mauvais (Town Halls).</li>
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>Ponts > Murs :</strong> Je travaille avec ceux qui construisent des ponts, pas ceux qui érigent des silos.</li>
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>Trust the Process :</strong> Accepter l'incertitude pour mieux se transformer.</li>
+                </ul>
+            </div>
+            
+            <div class="guide-text lang-en hidden">
+                <ul style="list-style: none; padding:0;">
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>Execution > Theory:</strong> Beyond strategy, execution is what matters.</li>
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>Transparency:</strong> I share vision and results, good or bad (Town Halls).</li>
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>Bridges > Walls:</strong> I work with those who build bridges, not silos.</li>
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>Trust the Process:</strong> Embracing uncertainty to transform better.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="guide-item">
+            <span class="guide-number">05. Communication</span>
+            <h3 class="guide-title">
+                <span class="lang-fr">Directe, mais bienveillante.</span>
+                <span class="lang-en hidden">Direct, but kind.</span>
+            </h3>
+            
+            <div class="guide-text lang-fr">
+                <p><strong>Assertive Communication :</strong> Je dis les choses. Si je pose une question, ce n'est pas un piège, c'est pour comprendre.</p>
+                <p>Je valorise l'adaptation culturelle : savoir "lire entre les lignes" quand c'est nécessaire, mais agir avec clarté. Je préfère une vérité difficile à un mensonge confortable.</p>
+            </div>
+            
+            <div class="guide-text lang-en hidden">
+                <p><strong>Assertive Communication:</strong> I speak up. If I ask a question, it's not a trap, it's to understand.</p>
+                <p>I value cultural adaptability: reading between the lines when necessary, but acting with clarity. I prefer a hard truth to a comfortable lie.</p>
+            </div>
+        </div>
+
+        <div class="guide-item">
+            <span class="guide-number">06. 
+                <span class="lang-fr">Ce dont j'ai besoin</span>
+                <span class="lang-en hidden">What I Need</span>
+            </span>
+            <h3 class="guide-title">
+                <span class="lang-fr">Vérité et Structure.</span>
+                <span class="lang-en hidden">Truth and Structure.</span>
+            </h3>
+            
+            <div class="guide-text lang-fr">
+                <ul style="list-style: none; padding:0;">
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>Feedback sans filtre :</strong> Dites-moi ce qui ne va pas. Sans détours.</li>
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>Engagement :</strong> "On l'fait !". J'ai besoin de gens qui s'approprient leurs résultats.</li>
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>Données :</strong> Je suis un leader axé sur les données. Apportez des faits, pas juste des opinions.</li>
+                </ul>
+            </div>
+            
+            <div class="guide-text lang-en hidden">
+                <ul style="list-style: none; padding:0;">
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>Unfiltered Feedback:</strong> Tell me what's wrong. Straight up.</li>
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>Ownership:</strong> "Let's do it!". I need people who own their outcomes.</li>
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>Data:</strong> I am a data-driven leader. Bring facts, not just opinions.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="guide-item">
+            <span class="guide-number">07. 
+                <span class="lang-fr">Tolérance Zéro</span>
+                <span class="lang-en hidden">Zero Tolerance</span>
+            </span>
+            <h3 class="guide-title">
+                <span class="lang-fr">L'Ego et l'Inaction.</span>
+                <span class="lang-en hidden">Ego and Inaction.</span>
+            </h3>
+            
+            <div class="guide-text lang-fr">
+                <ul style="list-style: none; padding:0;">
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>La politique de bureau :</strong> Ceux qui jouent des coudes au lieu de jouer collectif.</li>
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>Le savoir inactif :</strong> Avoir la solution et ne rien faire.</li>
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>L'entre-soi :</strong> Rester dans sa bulle sans chercher à comprendre la réalité de l'autre (manque d'empathie).</li>
+                </ul>
+            </div>
+            
+            <div class="guide-text lang-en hidden">
+                <ul style="list-style: none; padding:0;">
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>Office Politics:</strong> Those seeking influence over impact.</li>
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>Inactive Knowledge:</strong> Knowing the solution and doing nothing.</li>
+                    <li style="padding-left:0; margin-bottom:8px;"><strong>Insularity:</strong> Staying in a bubble without trying to understand others' reality (lack of empathy).</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="guide-item">
+            <span class="guide-number">08. 
+                <span class="lang-fr">Mes "Quirks"</span>
+                <span class="lang-en hidden">My Quirks</span>
+            </span>
+            <h3 class="guide-title">
+                <span class="lang-fr">Mes particularités.</span>
+                <span class="lang-en hidden">Things to know.</span>
+            </h3>
+            
+            <div class="guide-text lang-fr">
+                <ul style="list-style: none; padding:0;">
+                    <li style="padding-left:0; margin-bottom:8px;">Je répète souvent <strong>"Trust the process"</strong>. Ce n'est pas une phrase en l'air, c'est une méthode de résilience.</li>
+                    <li style="padding-left:0; margin-bottom:8px;">Je parle beaucoup de "systèmes". Pour moi, tout est interconnecté.</li>
+                    <li style="padding-left:0; margin-bottom:8px;">Je suis obsédé par l'idée de "laisser une trace positive".</li>
+                </ul>
+            </div>
+            
+            <div class="guide-text lang-en hidden">
+                <ul style="list-style: none; padding:0;">
+                    <li style="padding-left:0; margin-bottom:8px;">I often say <strong>"Trust the process"</strong>. It's not just a phrase; it's a resilience method.</li>
+                    <li style="padding-left:0; margin-bottom:8px;">I talk about "systems" a lot. To me, everything is interconnected.</li>
+                    <li style="padding-left:0; margin-bottom:8px;">I am obsessed with the idea of "leaving a positive legacy".</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="guide-item guide-full">
+            <span class="guide-number">09. 
+                <span class="lang-fr">Ce qui me donne de l'énergie</span>
+                <span class="lang-en hidden">What Gives Me Energy</span>
+            </span>
+            <h3 class="guide-title">
+                <span class="lang-fr">L'Impact et la Transformation.</span>
+                <span class="lang-en hidden">Impact and Transformation.</span>
+            </h3>
+            
+            <div class="guide-text lang-fr">
+                <p>Rien ne me motive plus que de voir une équipe dépasser ses objectifs ou de voir un collaborateur grandir. Transformer une idée abstraite en une réalité concrète est mon carburant quotidien.</p>
+            </div>
+            
+            <div class="guide-text lang-en hidden">
+                <p>Nothing motivates me more than seeing a team exceed its goals or seeing a colleague grow. Transforming an abstract idea into concrete reality is my daily fuel.</p>
+            </div>
+        </div>
+
+    </div>
+
+        <div class="card card-contact">
+        <div class="lang-fr">
+            <h3>Une idée, un défi ?</h3>
+            <p style="margin:0;">Discutons d'accélération de croissance.</p>
+        </div>
+        <div class="lang-en hidden">
+            <h3>An idea, a challenge?</h3>
+            <p style="margin:0;">Let's discuss growth acceleration.</p>
+        </div>
+        
+        <div class="contact-links">
+            <a href="mailto:amir.jaballah@gmail.com" class="btn btn-outline">Email</a>
+            <a href="https://www.linkedin.com/in/amir-jaballah-mba-6970721/" target="_blank" class="btn btn-primary">LinkedIn</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function setLanguage(lang) {
+        const frElements = document.querySelectorAll('.lang-fr');
+        const enElements = document.querySelectorAll('.lang-en');
+        const btnFr = document.getElementById('btn-fr');
+        const btnEn = document.getElementById('btn-en');
+
+        if (lang === 'fr') {
+            frElements.forEach(el => el.classList.remove('hidden'));
+            enElements.forEach(el => el.classList.add('hidden'));
+            btnFr.classList.add('active');
+            btnEn.classList.remove('active');
+        } else {
+            enElements.forEach(el => el.classList.remove('hidden'));
+            frElements.forEach(el => el.classList.add('hidden'));
+            btnEn.classList.add('active');
+            btnFr.classList.remove('active');
+        }
+    }
+</script>
 
 </body>
 </html>
